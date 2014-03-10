@@ -6,8 +6,8 @@ Puppet::Type.type(:package).provide :cpanm, :parent => Puppet::Provider::Package
 
   has_feature :installable, :upgradeable
 
-  confine  :exists => ['/usr/bin/cpanm', '/usr/bin/perldoc']
-  commands :cpanm  => '/usr/bin/cpanm'
+  confine  :exists => ['/usr/local/sbin/cpanm', '/usr/bin/perldoc']
+  commands :cpanm  => '/usr/local/sbin/cpanm'
 
   # Return structured information about all installed Modules
   def self.instances
